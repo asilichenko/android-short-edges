@@ -1,0 +1,15 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ShortEdges" parent="Theme.Material3.Light.NoActionBar">
+        <!-- true - status bar will be drawn compatible with a light background -->
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- hide status bar background-->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!--hide navigation bar background -->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="Theme.ShortEdges" parent="Base.Theme.ShortEdges" />
+
+</resources>

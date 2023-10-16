@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- https://developer.android.com/develop/ui/views/layout/display-cutout -->
+    <style name="Theme.ShortEdges" parent="Base.Theme.ShortEdges">
+        <!-- [default, shortEdges, never] -->
+        <!-- default: content renders into the cutout area when displayed in portrait mode, but is letterboxed when in landscape mode. -->
+        <!-- shortEdges: content always renders into the cutout area -->
+        <!-- never: content never renders into the cutout area -->
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
+
+</resources>
