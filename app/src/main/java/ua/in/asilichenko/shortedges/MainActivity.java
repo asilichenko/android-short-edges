@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    hideSystemUi();
+    setDecorFitsSystemWindows();
     ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.root_layout), this::onApplyWindowInsets);
   }
 
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
    * Hide program navigation bar: back, home, ... in the bottom of the screen
    * <a href="https://developer.android.com/develop/ui/views/layout/edge-to-edge">Display content edge-to-edge in your app</a>
    */
-  private void hideSystemUi() {
+  private void setDecorFitsSystemWindows() {
     WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
   }
 
