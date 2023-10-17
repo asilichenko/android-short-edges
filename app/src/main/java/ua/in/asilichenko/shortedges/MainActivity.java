@@ -2,6 +2,11 @@ package ua.in.asilichenko.shortedges;
 
 import static java.lang.Math.max;
 
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,10 +16,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-
 public class MainActivity extends AppCompatActivity {
 
   @Override
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 
     setDecorFitsSystemWindows();
-    ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.root_layout), this::onApplyWindowInsets);
+    ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.top_btn), this::onApplyWindowInsets);
   }
 
   /**
@@ -71,6 +72,13 @@ public class MainActivity extends AppCompatActivity {
     Log.d(getLocalClassName(), "right=" + safeInsets.right);
     Log.d(getLocalClassName(), "bottom=" + safeInsets.bottom);
     Log.d(getLocalClassName(), "");
+
+    final ViewGroup.MarginLayoutParams mlp = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
+    mlp.leftMargin = safeInsets.left;
+    mlp.topMargin = safeInsets.top;
+    mlp.bottomMargin = safeInsets.bottom;
+    mlp.rightMargin = safeInsets.right;
+    v.setLayoutParams(mlp);
 
     return WindowInsetsCompat.CONSUMED;
   }
