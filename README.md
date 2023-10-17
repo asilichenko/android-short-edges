@@ -106,7 +106,7 @@ This 'bug' is present even in Google products like Maps and Google Earth; Sky Ma
 @Override
 protected void onCreate(@Nullable Bundle savedInstanceState) {
   ...
-  ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.root_layout), this::onApplyWindowInsets);
+  ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.my_view), this::onApplyWindowInsets);
 }
 
 @NonNull
@@ -124,6 +124,22 @@ public WindowInsetsCompat onApplyWindowInsets(@NonNull View v, @NonNull WindowIn
   return WindowInsetsCompat.CONSUMED;
 }
 ```
+
+## Set component view margins
+
+```
+final ViewGroup.MarginLayoutParams mlp = 
+  (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+
+mlp.leftMargin = safeInsets.left;
+mlp.topMargin = safeInsets.top;
+mlp.bottomMargin = safeInsets.bottom;
+mlp.rightMargin = safeInsets.right;
+
+view.setLayoutParams(mlp);
+```
+
+![The button is in the safe zone](https://github.com/asilichenko/android-short-edges/assets/1503214/ff24098b-d2f6-4f49-8e16-eb7767f006ce)
 
 ## Source Code References
 * [AndroidManifest.xml](app/src/main/AndroidManifest.xml)
